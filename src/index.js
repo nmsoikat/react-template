@@ -4,7 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import axios from 'axios';
 
+
+axios.interceptors.request.use((req) => {
+  console.log(req);
+  // req.headers.set('')
+  return req;
+})
+
+axios.interceptors.response.use((res) => {
+  return res;
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
