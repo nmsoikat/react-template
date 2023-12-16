@@ -6,7 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 
+// Default configuration for all request
+axios.defaults.baseURL = 'http://localhost:3001'
 
+
+// Global Interceptor
 axios.interceptors.request.use((req) => {
   console.log(req);
   // req.headers.set('')
