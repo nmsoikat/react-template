@@ -7,6 +7,10 @@ const AuthRoutes = [
     component: <Login />
   },
   {
+    path: '/login',
+    component: <Login />
+  },
+  {
     path: '/signup',
     component: <Signup />
   }
