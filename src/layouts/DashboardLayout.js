@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react'
-import { Outlet, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import DashboardRoutes from '../routes/dashboard.route'
 import Sidebar from './Sidebar'
 import Footer from '../components/ui/Footer'
+import useAuth from '../features/authentication/hooks/userAuth'
 
 export default function AuthLayout() {
+  const isLogin = useAuth()
+  if (!isLogin) return <Navigate to="/" />
   return (
     <>
       <div className="flex h-screen bg-gray-100">
